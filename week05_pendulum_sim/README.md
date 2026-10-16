@@ -81,16 +81,19 @@ week05_pendulum_sim/
 
 ## 六、作品集链接
 
-GitHub 仓库地址：【待填写：建好仓库后把地址粘贴到这里】
+GitHub 仓库地址：https://github.com/carrottospring/human-ai-course
 
 ---
 
 ## 七、提交记录
 
-在仓库根目录执行 `git log --oneline` 的输出：
+在仓库根目录执行 `git log --oneline` 的主要输出：
 
 ```
+f7b56c1  2026-10-16 15:40  docs(week05): add experiment reflections and workspace docs
 df0c466  2026-10-16 15:31  feat: complete pendulum MVP with interactive parameter sliders
 c6b2a45  2026-10-16 14:53  fix: resolve reset button runtime error
 0415707  2026-10-16 13:54  feat(week05): init pendulum experiment workspace
 ```
+
+> 另有若干仅调整本文档内容的补充提交（如补充第六部分的仓库地址），未重复列出。
