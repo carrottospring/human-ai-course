@@ -134,7 +134,7 @@
   <div class="container">
     <header>
       <h1>单摆物理模拟器 (演练代码)</h1>
-      <span class="badge">Task 04 演练专用：点击重置按钮将触发控制台报错</span>
+      <span class="badge">Task 04 演练专用：已修复 ReferenceError</span>
     </header>
 
     <canvas id="canvas" width="800" height="440"></canvas>
@@ -164,12 +164,11 @@
         <input type="range" id="dampSlider" min="0.000" max="0.010" value="0.002" step="0.0005">
       </div>
 
-      <!-- 故意绑定的未定义函数 resetAnimation()，点击将精准触发 ReferenceError -->
-      <button id="resetBtn" class="btn-reset" onclick="resetAnimation()">重置摆动 (点击报错)</button>
+      <button id="resetBtn" class="btn-reset">重置摆动</button>
     </div>
 
     <div class="tip-box">
-      👉 <b>实战提示</b>：请按 <b>F12</b> 打开控制台（Console），点击红色按钮触发报错，并将红字堆栈喂给 AI 体验自愈！
+      👉 <b>实战提示</b>：点击"重置摆动"按钮可将单摆复位至初始角度（45°）且控制台无报错。
     </div>
   </div>
 
@@ -210,12 +209,13 @@
       dampVal.textContent = damping.toFixed(4);
     });
 
-    // 注意：这里函数名故意写成了 resetSimulationState，导致上面 onclick 调用的 resetAnimation 未定义！
     function resetSimulationState() {
       angle = Math.PI / 4;
       angularVelocity = 0.0;
       angularAcceleration = 0.0;
     }
+
+    document.getElementById('resetBtn').addEventListener('click', resetSimulationState);
 
     function updatePhysics(dt) {
       const gScaled = gravity * 60;
